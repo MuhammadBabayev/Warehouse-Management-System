@@ -1,0 +1,49 @@
+app:
+  frontend:
+    url: http://127.0.0.1:5500
+
+spring:
+  application:
+    name: warehouse-application
+  profiles:
+    active: local2
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: warehousemanagement.support@gmail.com
+    password: Anbar123!
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+server:
+  port: 8080
+
+#springdoc:
+#  api-docs:
+#    path: /v3/api-docs
+#    enabled: true
+#  swagger-ui:
+#    path: /swagger-ui.html
+#    enabled: true
+#  packages-to-scan: az.microservice.warehouseapplication
+#  paths-to-match: /**
+
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000
